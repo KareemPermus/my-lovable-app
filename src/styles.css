@@ -1,0 +1,96 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --font-display: var(--font-display-value);
+  --font-sans: var(--font-sans-value);
+}
+
+:root {
+  --radius: 0.75rem;
+  --font-display-value: "Fraunces", Georgia, serif;
+  --font-sans-value: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Warm paper & deep emerald ledger aesthetic */
+  --background: oklch(0.972 0.008 95);
+  --foreground: oklch(0.24 0.025 170);
+  --card: oklch(0.995 0.004 95);
+  --card-foreground: oklch(0.24 0.025 170);
+  --popover: oklch(0.995 0.004 95);
+  --popover-foreground: oklch(0.24 0.025 170);
+  --primary: oklch(0.42 0.085 168);
+  --primary-foreground: oklch(0.97 0.01 110);
+  --secondary: oklch(0.93 0.015 110);
+  --secondary-foreground: oklch(0.3 0.04 168);
+  --muted: oklch(0.94 0.012 100);
+  --muted-foreground: oklch(0.5 0.02 150);
+  --accent: oklch(0.9 0.05 130);
+  --accent-foreground: oklch(0.28 0.06 160);
+  --destructive: oklch(0.55 0.19 25);
+  --destructive-foreground: oklch(0.97 0.01 60);
+  --border: oklch(0.88 0.012 110);
+  --input: oklch(0.88 0.012 110);
+  --ring: oklch(0.42 0.085 168);
+  --positive: oklch(0.5 0.11 155);
+  --negative: oklch(0.55 0.19 25);
+  --sidebar: oklch(0.22 0.03 170);
+  --sidebar-foreground: oklch(0.92 0.015 110);
+  --sidebar-accent: oklch(0.3 0.04 168);
+  --sidebar-accent-foreground: oklch(0.97 0.01 110);
+  --sidebar-border: oklch(0.32 0.03 168);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans-value);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display-value);
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
